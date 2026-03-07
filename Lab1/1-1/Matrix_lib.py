@@ -3,17 +3,17 @@ class Matrix:
         self.data = data
         self.n = n
         self.m = m
-    
+
     @classmethod
     def from_list(cls, matrix):
         n = len(matrix)
         m = len(matrix[0]) if n > 0 else 0
         return cls([row[:] for row in matrix], n, m)
-    
+
     @classmethod
     def zeros(cls, n, m):
         return cls([[0 for _ in range(m)] for _ in range(n)], n, m)
-    
+
     def copy(self):
         new_matrix = [row[:] for row in self.data]
         return Matrix(new_matrix, self.n, self.m)
@@ -43,10 +43,10 @@ class Matrix:
         return '\n'.join(' '.join(map(str, row)) for row in self.data)
 
 
-def LUconverter(A: Matrix, needcount = False):
+def LUconverter(A: Matrix, needcount=False):
     if A.n != A.m:
         raise ValueError("Метод применим только для квадратных матриц")
-    
+
     n = A.n
     LU = A.copy()
     P = list(range(n))
@@ -64,8 +64,8 @@ def LUconverter(A: Matrix, needcount = False):
             swap_count += 1
 
         if LU.data[P[k]][k] == 0:
-                raise ValueError("Матрица вырожденная")
-        
+            raise ValueError("Матрица вырожденная")
+
         for i in range(k + 1, n):
             u = LU.data[P[i]][k] / LU.data[P[k]][k]
             LU.data[P[i]][k] = u
@@ -76,7 +76,7 @@ def LUconverter(A: Matrix, needcount = False):
         return P, LU, swap_count
     else:
         return P, LU
-        
+
 
 def LUgetter(P: list, LU: Matrix):
     U = Matrix.zeros(LU.n, LU.m)
@@ -89,4 +89,4 @@ def LUgetter(P: list, LU: Matrix):
                 U.data[i][j] = LU.data[P[i]][j]
             else:
                 L.data[i][j] = LU.data[P[i]][j]
-    return L,U
+    return L, U
