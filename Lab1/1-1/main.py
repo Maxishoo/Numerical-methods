@@ -6,4 +6,4 @@ A = Matrix.from_list(a)
 B = [18, -12, 6, -12]
 
 print(
-    f"Determinant: {Determinant(A)}\n\nSystem solution: X = {LinSysSolver(A,B)}")
+    f"Determinant: {Determinant(A)}\n\nSystem solution: X = {LULinSysSolver(A,B)}")

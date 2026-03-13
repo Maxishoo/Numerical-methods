@@ -23,7 +23,7 @@ def supportLinSysSolver(P: list, LU: Matrix, B: list):
     return ans
 
 
-def LinSysSolver(A: Matrix, B: list):
+def LULinSysSolver(A: Matrix, B: list):
     P, LU = LUconverter(A)
     return supportLinSysSolver(P, LU, B)
 
