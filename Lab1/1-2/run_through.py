@@ -11,8 +11,8 @@ def run_through(a: list, b: list, c: list, d: list):
     P[0] = -c[0] / b[0]
     Q[0] = d[0] / b[0]
     for i in range(1, n):
-        P[i] = -c[i]/(b[i]+a[i]*P[i-1])
-        Q[i] = (d[i]-a[i]*Q[i-1])/(b[i]+a[i]*P[i-1])
+        P[i] = -c[i] / (b[i] + a[i] * P[i-1])
+        Q[i] = (d[i] - a[i] * Q[i-1]) / (b[i] + a[i] * P[i-1])
 
     # backward
     X = [0] * n

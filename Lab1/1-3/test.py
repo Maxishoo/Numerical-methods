@@ -7,6 +7,6 @@ A = Matrix.from_list(a)
 
 B = [127, -144, 236, 5]
 
-EPS = 0.0001
+EPS = 0.000001
 
 print(f"Iters need: {ItersEvaluation(A,B,EPS)}\n\nSimpleIters: {SimpleItLinsysSolver(A,B,EPS)}\n\nSeidel: {SeidelLinsysSolver(A,B,EPS)}\n\n")
