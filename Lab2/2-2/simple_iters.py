@@ -30,4 +30,4 @@ while True:
         break
     x_old = x
 
-print(f"Solution: x1 = {x_old[0]}, x2 = {x_old[1]}")
+print(f"Solution: x1 = {x_old[0]}, x2 = {x_old[1]} {iters}")
