@@ -40,10 +40,10 @@ for i in range(n-1):
 # составляем систему
 # размер n-2
 a_system = [h[i] for i in range(1, n-1)] 
-b_system = [2*(h[i-1] + h[i]) for i in range(1, n-1)]
+b_system = [2 * (h[i - 1] + h[i]) for i in range(1, n-1)]
 c_system = [h[i] for i in range(1, n-1)]
 
-d_system = [3*((Y[i+1]-Y[i])/h[i] - (Y[i] - Y[i-1])/h[i-1]) for i in range(1, n-1)]
+d_system = [3 * ((Y[i+1] - Y[i]) / h[i] - (Y[i] - Y[i-1]) / h[i-1]) for i in range(1, n-1)]
 
 # Добавляем нулевые граничные условия для естественного сплайна
 c_full = [0] * n  # c[0] = 0, c[n-1] = 0

@@ -18,7 +18,7 @@ integral_rec_h1 = sum([h1 * f((X1[i-1] + X1[i])/2) for i in range(1, n1+1)])
 # Метод трапеций для h1
 integral_trap_h1 = sum([h1 * (f(X1[i-1]) + f(X1[i])) / 2 for i in range(1, n1+1)])
 
-# Метод Симпсона для h1 (требует чётного числа интервалов)
+# Метод Симпсона для h1
 integral_sim_h1 = 0
 for i in range(1, n1, 2):
     integral_sim_h1 += (h1/3) * (f(X1[i-1]) + 4*f(X1[i]) + f(X1[i+1]))
